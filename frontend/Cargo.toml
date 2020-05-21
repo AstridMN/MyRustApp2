@@ -1,0 +1,38 @@
+[package]
+authors = ["Sascha Grunert <mail@saschagrunert.de>"]
+categories = ["web-programming"]
+description = "A web application completely written in Rust"
+documentation = "https://docs.rs/webapp"
+homepage = "https://github.com/saschagrunert/webapp.rs"
+keywords = ["web", "app", "webapp", "wasm", "webassembly"]
+license = "MIT"
+name = "webapp-frontend"
+readme = "../README.md"
+repository = "https://github.com/saschagrunert/webapp.rs"
+version = "1.0.0"
+edition = "2018"
+
+[badges]
+circle-ci = { repository = "saschagrunert/webapp.rs", branch = "master" }
+codecov = { repository = "saschagrunert/webapp.rs", branch = "master", service = "github" }
+maintenance = { status = "actively-developed" }
+
+[[bin]]
+name = "app"
+path = "src/main.rs"
+
+[build-dependencies]
+anyhow = "1.0.31"
+sass-rs = "0.2.2"
+url = "2.1.1"
+webapp = { version = "1.0.0", path = ".." }
+
+[dependencies]
+anyhow = "1.0.31"
+log = "0.4.8"
+serde = { version = "1.0.110", features = ["derive"] }
+stdweb = "0.4.20"
+thiserror = "1.0.18"
+webapp = { version = "1.0.0", path = ".." }
+yew = { version = "0.14.3", features = ["std_web"] }
+yew-router = { version = "0.11.0", features = ["std_web"] }
